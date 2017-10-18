@@ -1,0 +1,28 @@
+.login-form {
+    position: relative;
+    width: 400px;
+    margin: 100px auto;
+    border: 1px solid #cccccc;
+    padding: 50px 30px;
+}
+
+.login-form .item {
+    position: relative;
+    margin-top: 10px;
+}
+
+.login-form .title {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login-form .item i {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.login-form .item input {
+    padding-left: 45px;
+}

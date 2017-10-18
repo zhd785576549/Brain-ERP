@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block extra_static_files %}
+<script src="{% static 'forms.js' %}"></script>
+{% endblock extra_static_files %}
+
+{% block body %}
+<form class="login-form" id="loginForm" method="post" action="{% url 'member_login' %}">
+    {% csrf_token %}
+    <span class="title">{% trans 'Brain ERP' %}</span>
+    <div class="item">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input class="form-control" type="text" name="email" placeholder="{% trans 'email' %}" data-toggle="tooltip" data-placement="bottom" title="{% trans 'email address like: admin@go.com' %}">
+        {% if errors %}
+        <span>{{ errors.email }}</span>
+        {% endif %}
+    </div>
+    <div class="item">
+        <i class="fa fa-key" aria-hidden="true"></i>
+        <input class="form-control" type="password" name="password" placeholder="{% trans 'password' %}" data-toggle="tooltip" data-placement="bottom"
+            title="{% trans 'Only _, numberic and letters' %}">
+        {% if errors %}
+        <span>{{ errors.password }}</span>
+        {% endif %}
+    </div>
+    <div class="item">
+        <button type="submit" class="btn btn-primary">{% trans 'login' %}</button>
+    </div>
+</form>
+{% endblock body %}
