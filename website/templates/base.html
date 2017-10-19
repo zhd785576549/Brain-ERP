@@ -4,6 +4,9 @@
     <head>
         <script src="{% static 'plugins/jquery/jquery-1.12.4.min.js' %}"></script>
         <script src="{% static 'plugins/jquery/jquery.form.min.js' %}"></script>
+        <script src="{% static 'plugins/jquery/jquery.i18n.properties.min.js' %}"></script>
+        <script src="{% static 'plugins/jquery/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'plugins/jquery/additional-methods.min.js' %}"></script>
         <script src="{% static 'plugins/bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
         <script src="{% static 'plugins/sweet-alert/sweetalert.min.js' %}"></script>
         <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.3.7/css/bootstrap.min.css' %}">
@@ -11,9 +14,16 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         {% block extra_static_files %}{% endblock extra_static_files %}
         <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        })
+        jQuery.i18n.properties({
+            name:'Messages', 
+            path:'/static/i18n/', 
+            mode:'map',
+            async: true,
+            debug: true,
+            callback: function() {
+
+            }
+        });
         </script>
         <title>{% trans 'Brain ERP' %}</title>
     </head>
