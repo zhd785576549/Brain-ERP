@@ -13,18 +13,6 @@
         <link rel="stylesheet" href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         {% block extra_static_files %}{% endblock extra_static_files %}
-        <script>
-        jQuery.i18n.properties({
-            name:'Messages', 
-            path:'/static/i18n/', 
-            mode:'map',
-            async: true,
-            debug: true,
-            callback: function() {
-
-            }
-        });
-        </script>
         <title>{% trans 'Brain ERP' %}</title>
     </head>
     <body>
